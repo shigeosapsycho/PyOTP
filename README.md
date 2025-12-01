@@ -7,7 +7,11 @@ A simple, console-based application built in Python for generating **Time-based 
 * **Local Storage:** Saves service details and secret keys to a local `secrets.csv` file.
 * **TOTP Generation:** Uses the `pyotp` library to generate 6-digit TOTP codes reliably.
 * **Time Remaining:** Displays the countdown for the time-sensitive code.
+* **Persistent Settings:** Saves user preference for clipboard copying to a **`settings.ini`** file.
+* **Clipboard Copying:** Automatically copies the generated TOTP code to the system clipboard when enabled.
 * **Cross-Platform Clearing:** Clears the console for a clean user experience on both Windows (`cls`) and Linux/macOS (`clear`).
+
+---
 
 ## 🚀 Installation & Setup
 
@@ -16,7 +20,7 @@ This project requires **Python 3.x**.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/shigeosapsycho/PyOTP
+git clone [https://github.com/shigeosapsycho/PyOTP](https://github.com/shigeosapsycho/PyOTP)
 cd PyOTP
 ````
 
@@ -37,11 +41,13 @@ source venv/bin/activate
 
 ### 3\. Install Dependencies
 
-The necessary dependencies are listed in `requirements.txt`.
+The necessary dependencies are listed in `requirements.txt`. Note that this includes **`pyperclip`** for clipboard functionality.
 
 ```bash
 pip install -r requirements.txt
 ```
+
+-----
 
 ## 🛠️ Usage
 
@@ -60,15 +66,28 @@ The application is command-line driven. When prompted, you can enter the followi
 | Command | Description |
 | :--- | :--- |
 | `add` | Enter a new service name, account name, and secret key to store. |
+| `copy` | **Toggles** the automatic copying of the TOTP code to your system clipboard (On/Off). |
 | `view` | Display the list of all stored accounts. |
 | `[number]` | Enter the number corresponding to an account to generate its TOTP code. |
 | `exit` | Close the application. |
 
 -----
 
+## ⚙️ Configuration
+
+The application automatically creates and manages a file named **`settings.ini`** in the project directory to store your preferences.
+
+The primary setting is controlled by the `copy` command:
+
+| Setting | Default Value | Description |
+| :--- | :--- | :--- |
+| `copy_to_clipboard` | `False` | Determines whether the generated TOTP code is automatically copied to the clipboard. |
+
+-----
+
 ## 📦 Building an Executable (recommended)
 
-You can easily convert this Python script into a standalone executable (`.exe` on Windows) using **PyInstaller**. This allows the program to be run on any machine without needing a Python installation.
+You can easily convert this Python script into a standalone executable (`.exe` on Windows) using **PyInstaller**.
 
 **Note:** PyInstaller is included in your `requirements.txt` file.
 
