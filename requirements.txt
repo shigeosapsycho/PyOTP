@@ -2,4 +2,3 @@ pyotp
 pyinstaller
 pyperclip
 configparser
-keyboard
