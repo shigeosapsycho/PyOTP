@@ -20,7 +20,7 @@ This project requires **Python 3.x**.
 ### 1. Clone the Repository
 
 ```bash
-git clone [https://github.com/shigeosapsycho/PyOTP](https://github.com/shigeosapsycho/PyOTP)
+git clone https://github.com/shigeosapsycho/PyOTP
 cd PyOTP
 ````
 
