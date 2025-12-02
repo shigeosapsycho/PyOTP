@@ -69,6 +69,8 @@ The application is command-line driven. When prompted, you can enter the followi
 | `copy` | **Toggles** the automatic copying of the TOTP code to your system clipboard (On/Off). |
 | `view` | Display the list of all stored accounts. |
 | `[number]` | Enter the number corresponding to an account to generate its TOTP code. |
+| `remove` | Removes a line from the .csv file, resulting in a removal of a TOTP/line |
+| `edit` | Edit a line's service, account name, or replacae the secret key |
 | `exit` | Close the application. |
 
 -----
