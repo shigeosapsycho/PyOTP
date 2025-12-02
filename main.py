@@ -210,17 +210,13 @@ def main():
 					if copy_to_clipboard:
 						pyperclip.copy(totp_code)
 						print(f"🔐 TOTP code for {service} ({account_name}) and has been copied to your clipboard: {totp_code}")
-						print(f"\nThe code is time-sensitive and has {30 - int(time.time()) % 30} seconds left. Press Enter to return to the main menu or type 'r' to refresh your code.")
-						temp = input()
-						if temp.lower() == '':
-							return
-						elif temp.lower() == 'r':
-							pyperclip.copy(totp_code)
-							print(f"🔐 TOTP code for {service} ({account_name}) and has been copied to your clipboard: {totp_code}")
-							print(f"\nThe code is time-sensitive and has {30 - int(time.time()) % 30} seconds left. Press Enter to return to the main menu.")
+						print(f"\nThe code is time-sensitive and has {30 - int(time.time()) % 30} seconds left.")
+						print(f"Press Enter to return to the main menu.")
+						input()
 					else:
 						print(f"🔐 TOTP code for {service} ({account_name}): {totp_code}")
-						print(f"\nThe code is time-sensitive and has {30 - int(time.time()) % 30} seconds left. Press Enter to return to the main menu.")
+						print(f"\nThe code is time-sensitive and has {30 - int(time.time()) % 30} seconds left.")
+						print(f"Press Enter to return to the main menu.")
 						input()
 					clear_console()
 					print("Welcome to the TOTP Manager! 🔑")
