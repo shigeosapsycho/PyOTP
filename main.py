@@ -129,7 +129,7 @@ def main():
 			print(" remove   - Remove a TOTP account")
 			print(" copy     - Toggle clipboard copy on/off")
 			print(" commands - View all available commands")
-			print(" edit     - Edit an existing TOTP account (not implemented)")
+			print(" edit     - Edit an existing TOTP account")
 			print(" exit     - Exit the TOTP Manager")
 			print("-" * 30)
 
@@ -242,3 +242,4 @@ def main():
 
 if __name__ == "__main__":
 	main()
+
