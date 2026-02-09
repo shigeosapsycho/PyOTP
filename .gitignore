@@ -1,0 +1,7 @@
+secrets.csv
+settings.ini
+/venv
+/build
+/dist
+TOTP_Manager.spec
+.DS_Store

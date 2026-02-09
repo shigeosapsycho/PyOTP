@@ -131,6 +131,7 @@ def main():
 			print(" commands - View all available commands")
 			print(" edit     - Edit an existing TOTP account")
 			print(" exit     - Exit the TOTP Manager")
+			print(" quit     - Exit the TOTP Manager")
 			print("-" * 30)
 
 		elif command == 'add':
@@ -143,7 +144,7 @@ def main():
 				clear_console()
 				continue
 			account_name = input("Enter account name: ").strip()
-			secret_key = input("Enter secret key: ").strip()
+			secret_key = input("Enter secret key: ").strip().replace(" ", "")
 			with open('secrets.csv', 'a') as file:
 				file.write(f"{service},{account_name},{secret_key}\n")
 			
@@ -227,7 +228,7 @@ def main():
 				else:
 					print(f"❌ Invalid account number ({index}).")		
 
-		elif command == 'exit':
+		elif command == 'exit' or command == 'quit':
 			print("Exiting the TOTP Manager. Goodbye! 👋")
 			break
 		
@@ -241,5 +242,11 @@ def main():
 
 
 if __name__ == "__main__":
-	main()
-
+	try:
+		main()
+	except KeyboardInterrupt:
+		clear_console()
+		print("\nExiting the TOTP Manager. Goodbye! 👋")
+	except Exception as e:
+		clear_console()
+		print(f"An error occurred: {e}")
